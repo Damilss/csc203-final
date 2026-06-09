@@ -1,9 +1,14 @@
-
-import java.nio.channels.OverlappingFileLockException;
 import java.util.Comparator;
 
 
-public class Book implements Comparable<Book>, Comparator<Book> {
+/**
+ * Book class represents book for main.
+ * @param title 
+ * @param author
+ * @param year
+ * @param pageCount
+ */
+public class Book implements Comparable<Book>{
     private String title;
     private String author;
     private int year;
@@ -15,12 +20,34 @@ public class Book implements Comparable<Book>, Comparator<Book> {
         this.year = year;
         this.pageCount = pageCount;
     }
-
+    /**
+     * getTitle getter method for title.
+     * @return
+     */
     public String getTitle()  { return title; }
+
+    /**
+     * getAuthor method for author
+     * @return
+     */
     public String getAuthor() { return author; }
+
+    /**
+     * getYear method for year
+     * @return
+     */
     public int getYear()      { return year; }
+
+    /**
+     * getPageCount method for pageCount
+     * @return
+     */
     public int getPageCount() { return pageCount; }
 
+    /**
+     * 
+     * @return
+     */
     public String toString() {
         return year + "  " + title + " — " + author + " (" + pageCount + "p)";
     }
