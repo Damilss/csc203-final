@@ -1,4 +1,5 @@
 import java.util.Comparator;
+import java.util.List;
 
 
 /**
@@ -57,7 +58,29 @@ public class Book implements Comparable<Book>{
         return this.year - o1.year;
     } 
 
-    Comparator<Book> byPage = Comparator.comparing(Book::getPageCount);
+    /**
+     * Comparator to compare books by pageCount
+     */
+    Comparator<Book> byPageCount  = Comparator.comparing(Book::getPageCount);
+
+    /**
+     * Comparator to compare by author that breaks ties by year
+     */
+    Comparator<Book> byAuthor = Comparator.comparing(Book::toString).thenComparing(Book::getYear);
+
+    /**
+     * 
+     */
+
+    public void printAuthors(List<Book> books, String author){
+        Predicate<Book> getBookAuthor = (Book myBook) -> ...author
+
+        books.stream()
+            .filter(getBookAuthor)
+            .forEach(null);
+    }
+
+
 /**
  * byPage is object type of Comparator interface, meaning that it inherits it's default methods for Comparator<Book>
  * By this logic we can cal to byPage.compare(Book o1, Book o2); which allows us to compare two books manually.
