@@ -1,2 +1,3 @@
 # csc203-final
-203 final review
+
+Simple little for practice some comparators and OOP with a Book class
